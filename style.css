@@ -1,0 +1,107 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Font yang lebih modern */
+    background-color: #e0f2f7; /* Biru muda yang menenangkan */
+    color: #333;
+    margin: 0;
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Pastikan mengambil tinggi viewport penuh */
+    padding: 20px;
+    box-sizing: border-box; /* Agar padding tidak melebarkan elemen */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px; /* Lebih bulat */
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1); /* Bayangan lebih dalam */
+    text-align: center;
+    max-width: 800px; /* Lebar maksimum agar tidak terlalu lebar di monitor besar */
+    width: 100%;
+    margin: auto; /* Pusatkan container */
+}
+
+header {
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: #007bff; /* Biru terang */
+    font-size: 2.8em;
+    margin-bottom: 15px;
+    position: relative;
+    /* Animasi fade-in untuk judul */
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInSlideDown 1s ease-out forwards;
+    animation-delay: 0.5s; /* Delay agar muncul setelah body */
+}
+
+nav {
+    margin-top: 15px;
+}
+
+nav a {
+    color: #007bff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transisi untuk hover */
+}
+
+nav a:hover {
+    color: #0056b3;
+    transform: translateY(-2px); /* Efek sedikit naik saat hover */
+}
+
+p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #555;
+    /* Animasi fade-in untuk paragraf */
+    opacity: 0;
+    transform: translateY(-10px);
+    animation: fadeInSlideDown 1s ease-out forwards;
+    animation-delay: 1s; /* Delay setelah judul */
+}
+
+footer {
+    margin-top: 40px;
+    font-size: 0.9em;
+    color: #777;
+}
+
+/* --- ANIMASI --- */
+@keyframes fadeInSlideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animasi background yang bergerak perlahan */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #e0f2f7 0%, #c1e7f3 100%); /* Gradien warna */
+    z-index: -1; /* Di belakang konten */
+    animation: gradientMove 15s ease infinite alternate; /* Animasi bergerak */
+    background-size: 200% 200%; /* Agar gradien bisa bergerak */
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
